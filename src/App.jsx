@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import { IoTrash } from "react-icons/io5";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -64,10 +65,13 @@ function App() {
           </div>
           <div className="flex flex-row items-center justify-center">
             <button
-              className="px-4 py-2 text-sm font-bold text-white bg-gray-800 rounded-lg shadow-md w-20  focus:outline-none hover:bg-gray-950"
+              className="px-4 py-2 text-sm font-bold text-gray-800 border-4 border-gray-800 rounded-lg shadow-md flex items-center focus:outline-none hover:border-red-700 hover:text-red-700"
               onClick={() => setTodos([])}
             >
               Clear
+              <IoTrash
+                className="ml-2 text-xl"
+              />
             </button>
 
           </div>
