@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const storedTodos = localStorage.getItem('todos');
     const storedShowTutorial = localStorage.getItem('showTutorial');
-    if (storedShowTutorial == 'true') {
+    if (!storedShowTutorial) {
       setShowTutorial(true);
       localStorage.setItem('showTutorial', false);
     }
