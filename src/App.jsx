@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import { IoTrash, IoCheckmarkOutline, IoArrowUpOutline } from "react-icons/io5";
+import { IoTrash, IoCheckmarkOutline, IoArrowUpOutline, IoClose } from "react-icons/io5";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -110,10 +110,11 @@ function App() {
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-200">
+
         {/* navbar */}
+
         <div className="flex flex-row items-center justify-between w-full px-10 py-4">
           <div className="flex flex-row items-center justify-center">
-            {/* get todos length without done todos */}
             <h1 className="text-l font-bold text-gray-800 animate-fade-in">
               Todo: {todos.filter((todo) => !todo.done).length}
             </h1>
@@ -127,6 +128,9 @@ function App() {
               onClick={handleHelp}>
               Help
             </div>
+
+            {/* Clear Button */}
+
             <button
               className="px-4 py-2 animate-fade-in text-sm font-bold text-gray-800 border-4 border-gray-800 rounded-lg shadow-md flex items-center focus:outline-none hover:border-red-700 hover:text-red-700"
               onClick={() => setTodos([])}
@@ -138,9 +142,14 @@ function App() {
         </div>
 
         <div className="flex flex-col items-center justify-center w-full flex-1 py-20 px-20 text-center ">
+
+          {/* Logo */}
+
           <div className="animate-fade-in">
             <h1 className="text-6xl mb-4 text-gray-800  select-none">Daymate</h1>
           </div>
+
+          {/* Todo Input */}
 
 
           <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
@@ -163,6 +172,9 @@ function App() {
                     Add
                   </button>
                 </div>
+
+                {/* Todo Items */}
+
                 <div className="flex flex-col items-center justify-center w-full mt-4">
                   {todos
                     .sort((a, b) => (a.done && !b.done ? 1 : b.done && !a.done ? -1 : 0)) // Sort todos with done items at the bottom
@@ -195,30 +207,13 @@ function App() {
                               />
                             )}
                           </div>
-
-
-
-
                         </label>
                         <p className="text-l bg-transparent w-52 text-start overflow-hidden overflow-ellipsis whitespace-normal break-words">{todo.text}</p>
                         <button
                           onClick={() => handleDeleteTodo(index)}
                           className="ml-auto text-red-500 hover:text-red-700 focus:outline-none bg-transparent"
                         >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-6 h-6"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M6 18L18 6M6 6l12 12"
-                            />
-                          </svg>
+                          <IoClose className="text-xl" />
                         </button>
                       </div>
                     ))}
@@ -228,6 +223,8 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* Tutorial */}
 
       {showTutorial && (
         <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-800 bg-opacity-50">
