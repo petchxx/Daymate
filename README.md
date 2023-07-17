@@ -42,9 +42,9 @@ Daymate is a simple todo list application built with React. It allows you to add
 
 ## Usage
 
-1. Type a todo in the input field and press "Enter" or click the "Add" button to add it to the list.
-2. Use the up and down arrow keys to select a todo.
-3. Press "Enter" to toggle the selected todo's status.
-4. Press "Backspace" to delete the selected todo.
-5. Click the "Clear" button to delete all todos.
-6. Click the "Help" button to show/hide the tutorial.
+- Type a todo in the input field and press "Enter" or click the "Add" button to add it to the list.
+- Use the up and down arrow keys to select a todo.
+- Press "Enter" to toggle the selected todo's status.
+- Press "Backspace" to delete the selected todo.
+- Click the "Clear" button to delete all todos.
+- Click the "Help" button to show/hide the tutorial.
