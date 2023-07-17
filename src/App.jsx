@@ -132,7 +132,7 @@ function App() {
 
         <div className="flex flex-col items-center justify-center w-full flex-1 py-20 px-20 text-center ">
           <div className="animate-fade-in">
-            <h1 className="text-6xl mb-4 text-gray-800 ">Daymate</h1>
+            <h1 className="text-6xl mb-4 text-gray-800  select-none">Daymate</h1>
           </div>
 
 
@@ -150,7 +150,7 @@ function App() {
                     onClick={clearSelectedTodo}
                   />
                   <button
-                    className="px-4 py-2 mb-4 text-l font-bold text-white bg-gray-800 hover:bg-gray-950 rounded-lg shadow-md w-80 h-12 focus:outline-none"
+                    className="px-4 py-2 mb-4 text-l font-bold text-white bg-gray-800 hover:bg-gray-950 rounded-lg shadow-md w-80 h-12 focus:outline-none select-none"
                     onClick={handleAddTodo}
                   >
                     Add
@@ -190,9 +190,10 @@ function App() {
                           </div>
 
 
-                          <p className="text-l bg-transparent w-52 text-start overflow-hidden overflow-ellipsis whitespace-normal break-words">{todo.text}</p>
+
 
                         </label>
+                        <p className="text-l bg-transparent w-52 text-start overflow-hidden overflow-ellipsis whitespace-normal break-words">{todo.text}</p>
                         <button
                           onClick={() => handleDeleteTodo(index)}
                           className="ml-auto text-red-500 hover:text-red-700 focus:outline-none bg-transparent"
