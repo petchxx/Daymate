@@ -162,9 +162,9 @@ function App() {
                     .map((todo, index) => (
                       <div
                         key={index}
-                        onClick={() => selectTodo(index)}
                         onKeyDown={handleKeyDown}
-                        tabIndex={0} // Add tabIndex attribute
+                        tabIndex={0}
+                        onClick={() => selectTodo(index)}
                         className={`w-80 px-4 py-2 my-2 flex items-center ${todo.done
                           ? 'line-through text-gray-500'
                           : 'text-gray-700 bg-gray-100 animate-slide-up'
@@ -179,6 +179,7 @@ function App() {
                             checked={todo.done}
                             onChange={() => handleToggleDone(index)}
                             className="hidden"
+
                           />
                           <div className="w-6 h-6 border-2 rounded-full border-gray-800 flex items-center justify-center mr-4">
                             {todo.done && (
@@ -187,7 +188,10 @@ function App() {
                               />
                             )}
                           </div>
-                          <p className="text-l bg-transparent truncate">{todo.text}</p>
+
+
+                          <p className="text-l bg-transparent w-52 text-start overflow-hidden overflow-ellipsis whitespace-normal break-words">{todo.text}</p>
+
                         </label>
                         <button
                           onClick={() => handleDeleteTodo(index)}
