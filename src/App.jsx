@@ -104,6 +104,9 @@ function App() {
     setShowTutorial(true);
   };
 
+  const handleGithub = () => {
+    window.open('https://github.com/petchxx/Daymate/', '_blank');
+  };
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-200">
@@ -116,7 +119,11 @@ function App() {
             </h1>
           </div>
           <div className="flex flex-row items-center justify-center">
-            <div className='mx-10 cursor-pointer text-gray-800 text-sm font-bold hover:text-purple-700 animate-fade-in'
+            <div className='mr-10 cursor-pointer text-gray-800 text-sm font-bold hover:text-purple-700 animate-fade-in'
+              onClick={handleGithub}>
+              Github
+            </div>
+            <div className='mr-10 cursor-pointer text-gray-800 text-sm font-bold hover:text-purple-700 animate-fade-in'
               onClick={handleHelp}>
               Help
             </div>
