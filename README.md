@@ -40,7 +40,7 @@ Daymate is a simple todo list application built with React. It allows you to add
    ```bash
    npm run build
 
-##Usage
+## Usage
 
 1. Type a todo in the input field and press "Enter" or click the "Add" button to add it to the list.
 2. Use the up and down arrow keys to select a todo.
