@@ -83,6 +83,7 @@ function App() {
         }
       }
     }
+
   };
 
   const selectTodo = (index) => {
@@ -107,6 +108,25 @@ function App() {
   const handleGithub = () => {
     window.open('https://github.com/petchxx/Daymate/', '_blank');
   };
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setShowTutorial(false);
+      }
+      if (event.key === 'Enter') {
+        setShowTutorial(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, []);
+
+
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-200">
@@ -227,7 +247,8 @@ function App() {
       {/* Tutorial */}
 
       {showTutorial && (
-        <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-800 bg-opacity-50">
+        <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-800 bg-opacity-50"
+        >
           <div className="bg-white p-8 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-4 bg-white">🎉 Welcome to Daymate!</h2>
             <p className="text-lg mb-4 bg-white">
